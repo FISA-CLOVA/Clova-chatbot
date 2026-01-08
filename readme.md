@@ -1,6 +1,8 @@
-# 🤖 NCP CLOVA 연동 챗봇 서비스 (Chatbot Project)
+# 🤖 NCP CLOVA 연동 챗봇 서비스
 
 > **네이버 클라우드 플랫폼(NCP)의 CLOVA Chatbot API**를 활용하여 사용자와 실시간 대화가 가능한 웹 기반 채팅 서비스를 구현한 프로젝트입니다.
+
+> 우리 FISA 6기 학생들의 어려움을 해결할 수 있도록 각 질문에 대한 답변을 제공합니다.
 
 ---
 
@@ -15,15 +17,11 @@
 
 ---
 
-## ## 2. 기술 스택 및 구조
+## ## 2. 팀원
 
-| 분류 | 기술 | 상세 내용 |
-| :--- | :--- | :--- |
-| **Frontend** | **Vanilla JavaScript** | DOM 조작 및 Fetch API 기반 비동기 통신 |
-| **Backend** | **Node.js (Express)** | 클라이언트와 NCP API 사이의 중계 서버 구축 |
-| **API 통신** | **Superagent** | 서버 측에서 NCP CLOVA Chatbot API 호출 수행 |
-| **보안/인증** | **Crypto-js** | HMAC SHA256 알고리즘 기반 API Signature 생성 |
-| **환경 설정** | **Dotenv** | API URL 및 Secret Key 등 보안 민감 정보 관리 |
+| 팀원 |      |      |      |
+| :--- | :--- | :--- | :--- |
+| **이건희** | **송민혁** | **박주호** | **이유림** |
 
 ---
 
@@ -31,7 +29,3 @@
 
 ### ### 1) 필수 환경 변수 설정 (`.env`)
 프로젝트 루트 디렉토리에 `.env` 파일을 생성하고 아래 형식을 입력합니다. (보안을 위해 `.gitignore`에 등록되어 있습니다.)
-
-```env
-SECRET_KEY=여러분의_NCP_SECRET_KEY
-INVOKE_URL=여러분의_CLOVA_INVOKE_URL
