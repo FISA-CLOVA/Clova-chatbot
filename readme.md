@@ -51,6 +51,7 @@ chatInput.addEventListener('keydown', function(event) {
     }
 });
 ```
+
 ---
 
 ## 3. 프로젝트 트러블슈팅
