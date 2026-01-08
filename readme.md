@@ -45,7 +45,8 @@
     
     </br>
 
-    ```{
+    ```
+    {
     "success": false,
     "resultCode": "99",
     "resultMessage": "Message contents is empty"
