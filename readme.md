@@ -34,8 +34,23 @@
 * **사용자 편의 UI/UX**:
     * **자동 스크롤**: 새 메시지 생성 시 채팅창 하단으로 즉시 포커싱되고, 메시지 박스의 총 크기가 화면보다 커지면 스크롤 바를 통해 올리고 내릴 수 있으며, 스크롤바는 안보이도록 구현했습니다.
     * **시간 표기**: `now()` 함수를 통해 현재 시각을 timestamp 값에 넣어 요청하여 메시지 전송 시각을 화면에 출력합니다.
-    * **한글 입력 최적화**: `isComposing` 상태 체크를 통해 한글 입력 시 마지막 글자의 중복 입력을 방지합니다.
+    * **엔터 입력 지원 및 오류 방지**: `isComposing` 상태 체크를 통해 한글 입력 시 마지막 글자의 중복 입력을 방지합니다.
+      ```
+      // 1. 버튼 클릭 시 전송
+   submitBtn.onclick = function(event) {
+    event.preventDefault();
+    sendMessage();
+};
 
+// 2. 엔터키 입력 시 전송
+chatInput.addEventListener('keydown', function(event) {
+    // event.isComposing : 한글 입력 시 마지막 글자의 중복 입력 방지
+    if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) {
+        event.preventDefault(); // 엔터키 줄바꿈 방지
+        sendMessage();
+    }
+});
+```
 ---
 
 ## 3. 프로젝트 트러블슈팅
