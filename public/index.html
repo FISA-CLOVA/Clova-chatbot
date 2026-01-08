@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fisa Chatbot</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="eventHandler.js"></script> <!--이벤트핸들러 js--><!--defer : HTML분석이 끝난 후 스크립트 실행하도록-->
+</head>
+<body>
+    <header>
+        <h1>Woori Fis</h1>
+    </header>
+    <main>
+        <section class="chat">
+            <!-- bot -->
+            <!-- <div class="message-row message-row--bot"> -->
+                <!-- <img class="avatar" src="./images/character.png" alt="고라파덕"> -->
+                <!-- <p class="message message--bot">안녕</p> -->
+            <!-- </div> -->
+            <!-- user -->
+            <!-- <div class="message message--user">반가워</div> -->
+            <!-- bot -->
+            <!-- <div class="message-row message-row--bot"> -->
+                <!-- <img class="avatar" src="./images/character.png" alt="고라파덕"> -->
+                <!-- <p class="message message--bot">잘지내?</p> -->
+            <!-- </div> -->
+            <!-- user -->
+            <!-- <div class="message message--user">글쎄...</div> -->
+        </section>
+        <section class="input">
+            <form class="input-form">
+                <textarea
+                    class="chat-input"
+                    rows="1"
+                    placeholder="메시지를 입력하세요"
+                ></textarea>
+                <button type="submit" class="send-button" id="submit">전송</button> <!--id:submit-->
+            </form>
+        </section>
+    </main>
+</body>
+</html>

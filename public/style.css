@@ -1,0 +1,208 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+
+body {
+    max-width: 420px;
+    margin: 0 auto;     /* 좌우 중앙 정렬 */
+    padding: 0px;
+
+    display: flex;
+    flex-direction: column;
+
+    /*border-color: black 2px solid;*/
+    border: black 2px solid;
+    
+}
+
+header {
+    /*background-color: #03C75A;*/
+    background-image: linear-gradient(to right, rgb(0,226,94), rgb(0,209,201));
+    padding: 12px;
+    flex: 0 0 auto; /* 고정 높이 */
+}
+
+header h1 {
+    margin: 0;
+    color: white;
+    text-align: center;
+}
+
+/* ⬇️ 핵심: main이 남은 화면 높이를 전부 차지 */
+main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 채팅 영역: 비어 있어도 높이를 차지 */
+.chat {
+    height:100px;
+    flex: 1 1 auto;
+    background-color: white;
+    overflow-y: auto;
+    min-height: 0;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    -ms-overflow-style: none;
+}
+.chat::-webkit-scrollbar {
+    display: none;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 100px;
+    background-image: url('character.png');
+    background-size: cover;
+}
+
+/* 공통 말풍선 */
+.message {
+  padding: 10px 14px;
+  border-radius: 10px;
+  width: fit-content;
+  max-width: 80%;
+  margin: 0;              /* p 기본 margin 제거 */
+  word-break: break-word; /* 긴 텍스트 대비 */
+}
+
+/* 봇 말풍선 */
+.message--bot {
+  background-color: white;
+}
+
+/* 사용자 말풍선 (오른쪽) */
+.message--user {
+  background-color: yellow;
+  align-self: flex-end;
+}
+
+/* 봇 메시지: 아바타 + 말풍선 row */
+.message-row {
+  
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.input {
+    background-color: #00c3c8;
+
+    flex: 0 0 auto;        /* 바닥에 붙는 고정 영역 */
+    padding: 12px;
+    /*border-radius: 8px;*/
+}
+
+.input-form {
+    display: flex;
+    align-items: flex-end; /* textarea가 커질 때 버튼은 아래 정렬 */
+    gap: 8px;
+}
+
+/* 입력 영역: 남은 공간 전부 차지 */
+.chat-input {
+    flex: 1 1 auto;
+
+    min-height: 40px;
+    max-height: 120px;
+
+    padding: 10px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.4;
+
+    border: 1px solid #ccc;
+    border-radius: 20px;
+
+    resize: none;
+    overflow-y: hidden;
+    outline: none;
+}
+
+/* 전송 버튼: 오른쪽 고정 */
+.send-button {
+    flex: 0 0 auto;
+
+    height: 40px;
+    padding: 0 14px;
+
+    border: none;
+    border-radius: 20px;
+    background-color: #03C75A;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* 사용자 메시지 행을 오른쪽으로 정렬 */
+.message-row--user {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: flex-end;     
+    gap: 4px;                 
+}
+
+/* 말풍선과 시간을 감싸는 행 설정 */
+.message-row--bot, .message-row--user {
+    display: flex;
+    align-items: flex-end; /* 시간과 말풍선을 아래쪽 바닥 기준으로 정렬 */
+    margin-bottom: 15px;
+    gap: 5px; /* 시간과 말풍선 사이 간격 */
+}
+
+/* 사용자 메시지 행 오른쪽 정렬 */
+.message-row--user {
+    justify-content: flex-end;
+}
+
+/* 시간 스타일 */
+.message-time {
+    font-size: 10px;
+    color: #888;
+    flex-shrink: 0; /* 시간이 좁아져서 줄바꿈되지 않도록 설정 */
+    margin-bottom: 2px; /* 말풍선보다 아주 살짝 위에 띄우고 싶을 때 조절 */
+}
+
+/* 기존 CSS 유지 및 보완 */
+.message {
+    max-width: 60%;
+    word-break: break-all;
+}
+
+/* 봇 말풍선 행 */
+.message-row--bot {
+    display: flex;
+    align-items: flex-end; 
+    margin-bottom: 10px;
+}
+
+/* 사용자 말풍선 행 (함수가 새로 만들어준 클래스) */
+.message-row--user {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: flex-end;     
+    margin-bottom: 10px;
+}
+
+/* 시간 글씨 스타일 */
+.message-time {
+    font-size: 10px;
+    color: #888;
+    margin: 0 5px; 
+    line-height: 1; 
+}
+
+/* 말풍선 기본 설정 유지 */
+.message {
+    margin-bottom: 0 !important; 
+}

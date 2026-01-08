@@ -1,0 +1,14 @@
+# 환경 변수 파일 (보안 관련 키 포함)
+.env
+
+# 의존성 패키지 (용량이 크고 npm install로 설치 가능)
+node_modules/
+
+# 로그 파일
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 운영체제 관련 파일
+.DS_Store
+Thumbs.db
